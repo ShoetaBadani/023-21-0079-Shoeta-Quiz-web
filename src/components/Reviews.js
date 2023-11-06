@@ -14,4 +14,3 @@ export const BuyerReview = () => {
   )
     };
   
-  export { BuyerReview, SellerReview };
