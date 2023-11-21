@@ -1,25 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
-import Footer from './components/Footer';
-import { HeroSection } from './components/HeroSection';
-import { Projects } from './components/Projects';
-import { BuyerReview, SellerReview } from './components/Reviews';
-import Contact from './components/Contact';
+import Welcome from './components/Welcome';
+import Offerings from './components/Offerings';
 
 function App() {
   return (
-    <div>
+    <div style={{backgroundColor: "rgba(255, 238, 252, 1)"}}>
       <Header />
-      <Footer />
-      <HeroSection/>
-      <Projects/>
-      <BuyerReview/>
-      <SellerReview/>
-      <Contact/>
-    
-      
+      <Welcome />
+      <Offerings />
     </div>
   );
 }

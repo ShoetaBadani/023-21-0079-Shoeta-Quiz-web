@@ -1,52 +1,37 @@
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Image from './footer-logo.svg.png';
+import Button from 'react-bootstrap/Button';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-export default function Header(){
-    return(
-        <>
-        <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid>
-        <Navbar.Brand href="#">Shoeta</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Projects</Nav.Link>
-            <NavDropdown title="Reviews" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Buyer Review</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-               Seller Review
-              </NavDropdown.Item>
-              {/* <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item> */}
-            </NavDropdown>
-            <Nav.Link href="#">
-              Contact Us
-            </Nav.Link>
-          </Nav>
-          <Form className="d-flex">
-            {/* <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            /> */}
-            <Button variant="outline-primary">Login</Button>
-          </Form>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
- 
-        </>
-    )
+const style1 =
+{
+    backgroundColor:"rgba(255, 238, 252, 1)",
+    fontFamily: "Poppins"
 }
+
+
+const Header = () => {
+  return (
+    <Navbar collapseOnSelect expand="lg" style={style1}>
+    <Container>
+        <img src={Image} alt='logo'/>
+      <Navbar.Brand href="#home"style={{color:"rgba(48, 49, 121, 1)", margin:'10px', fontSize:"30px", fontStyle:"bold"}}><span>Writealy</span></Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="ms-auto">
+        <NavDropdown title="Products" id="basic-nav-dropdown"></NavDropdown>
+        <NavDropdown title="Use cases" id="basic-nav-dropdown"></NavDropdown>
+          <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Nav.Link href="#pricing">Customer</Nav.Link>
+          <NavDropdown title="Resources" id="basic-nav-dropdown"></NavDropdown>
+          <Nav.Link href="#pricing"><Button variant="outline-dark" className='rounded-pill'>Sign in</Button></Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
+  )
+}
+
+export default Header;
